@@ -1,0 +1,11 @@
+hi: 'Hello World!'
+
+# Yea, comment
+
+some: true
+
+cool_list: ['hi', 1.2, 3.14, true]
+
+# Сейчас добавлю так, чтобы можно было указывать значение другого объекта
+
+other: cool_list
