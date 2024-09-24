@@ -29,6 +29,14 @@ public record FTMLObject(String key, Object value, ObjectType type) implements I
             type = ObjectType.fromString(split[1].strip());
         }
 
+        value = switch (type) {
+            case Integer -> Integer.parseInt(value.toString());
+            case Float -> Float.parseFloat(value.toString());
+            case Double -> Double.parseDouble(value.toString());
+            case Boolean -> Boolean.parseBoolean(value.toString());
+            default -> value.toString().strip();
+        };
+
         FTMLObject object = new FTMLObject(key, value, type);
 
         objects.add(object);
